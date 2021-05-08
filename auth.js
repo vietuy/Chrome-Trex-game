@@ -60,7 +60,7 @@ async function getreddit() {
   let answer = `<p>Newest post from r/Trex Runner:</p>`;
     for(let i = 0; i < data.data.children.length;i++) {
       let redditlink = "https://reddit.com" + data.data.children[i].data.permalink;
-      answer += `<li><a href = redditlink target = _blank> ${data.data.children[i].data.title} </a></li>`;
+      answer += `<li><a href = "${redditlink}" target = _blank> ${data.data.children[i].data.title} </a></li>`;
     }
     return answer;
 }
