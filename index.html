@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link id="mystylesheet" rel="stylesheet" href="style.css"></link>
+    <title>Login</title>
+</head>
+<body>
+      <!-- NAVBAR -->
+  <nav class="z-depth-0 grey lighten-4">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo">
+        <img src="t-rex.png" style="width: 50px; margin-top: 10px;">
+      </a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li class="logged-in">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-account">Account</a>
+          </li>
+          <li class="logged-in">
+            <a href="#" class="grey-text" id="logout">Logout</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-login">Login</a>
+          </li>
+          <li class="logged-out">
+            <a href="#" class="grey-text modal-trigger" data-target="modal-signup">Sign up</a>
+          </li>
+        </span>
+      </ul>
+    </div>
+  </nav>
+
+  <div id = "root">
+
+  </div>
+  <div id = "spotify">
+
+  </div>
+
+  <div id = "reddit">
+
+  </div>
+
+  <div id="modal-account" class="modal">
+    <div class="modal-content center-align">
+      <h4>Account details</h4><br />
+      <div class="account-details"></div>
+    </div>
+  </div>
+
+  <div id="modal-signup" class="modal">
+    <div class="modal-content">
+      <h4>Sign up</h4><br />
+      <form id="signup-form">
+        <div class="input-field">
+          <input type="email" id="signup-email" required />
+          <label for="signup-email">Email address</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="signup-password" required />
+          <label for="signup-password">Choose password</label>
+        </div>
+        <button class="btn yellow darken-2 z-depth-0">Sign up</button>
+        <p class="error pink-text center-align"></p>
+      </form>
+    </div>
+  </div>
+    <!-- LOGIN MODAL -->
+    <div id="modal-login" class="modal">
+        <div class="modal-content">
+          <h4>Login</h4><br />
+          <form id="login-form">
+            <div class="input-field">
+              <input type="email" id="login-email" required />
+              <label for="login-email">Email address</label>
+            </div>
+            <div class="input-field">
+              <input type="password" id="login-password" required />
+              <label for="login-password">Your password</label>
+            </div>
+            <button class="btn yellow darken-2 z-depth-0">Login</button>
+            <p class="error pink-text center-align"></p>
+          </form>
+        </div>
+      </div>
+
+      <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+
+      <script>
+        var firebaseConfig = {
+          apiKey: "AIzaSyC7WWaqMaCRSIJtl_KlfXpi1BTFV3TlPEI",
+          authDomain: "comp426-final-64d0b.firebaseapp.com",
+          projectId: "comp426-final-64d0b",
+          storageBucket: "comp426-final-64d0b.appspot.com",
+          messagingSenderId: "941611691063",
+          appId: "1:941611691063:web:baaf1105b8f78fbedde3b2",
+          measurementId: "G-FVCQ07DN03"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+      </script>
+
+  <script type="text/javascript">
+    var setTheme = localStorage.getItem('theme')
+    if (setTheme == null){
+      swapStyle('style.css')
+    }else{
+      swapStyle(setTheme)
+    }
+    function swapStyle(sheet){
+      document.getElementById('mystylesheet').href = sheet
+      localStorage.setItem('theme', sheet)
+    }
+  </script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="auth.js"></script>
+    <script src="index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="app.js" charset="utf-8"></script>
+</body>
+</html>

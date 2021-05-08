@@ -1,0 +1,86 @@
+body {
+  background-color:rgb(36, 41, 46);
+  color:white;
+}
+.game {
+    width: 600px;
+    height: 232px;
+    border: 1px solid;
+    margin:auto;
+    background-image: url(actualgame-backg.jpg);
+    background-size: 600px 232px;
+}
+#gameb {
+    width: 600px;
+    height: 225px;
+    border: 1px solid;
+    background-image: url(game-backg.jpg);
+    background-size: 600px 225px;
+    margin:auto;
+  }
+  .newgame{
+    position:relative;
+    top:190px;
+    left:250px;
+  }
+  #instruction {
+    width: 600px;
+    height: 30px;
+    margin:auto;
+  }
+  #score {
+    font-family: Comic sans-serif;
+    font-size: 20px;
+    position: relative;
+    left:520px;
+  }
+  #dino {
+    width: 50px;
+    height:50px;
+    background-image: url(t-rex.png);
+    background-size: 50px 50px;
+    position:relative;
+    top:150px;
+    
+  }
+  .jump {
+    animation: jump 0.45s linear;
+  }
+  
+  @keyframes jump {
+    0% {
+      top: 150px;
+    }
+    30% {
+      top:100px;
+    }
+    50% {
+      top:50px;
+    }
+    80% {
+      top:100px
+    }
+    100%{
+      top:150px;
+    }
+  }
+  
+  #cactus {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    top: 93px;
+    left: 540px;
+    background-image: url(cacti.png);
+    background-size: 60px 60px;
+    animation: block 1s infinite linear;
+  }
+  
+  @keyframes block {
+    0% {
+      left:540px;
+    }
+    100% {
+      left: -20px;
+    }
+  }
